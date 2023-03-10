@@ -19,7 +19,7 @@ function logOut(){
   return (
     <div className="headerParentDiv">
       <div className="headerChildDiv">
-        <div className="brandName">
+        <div className="brandName" onClick={()=>navigate("/")}>
           <OlxLogo></OlxLogo>
         </div>
         <div className="placeSearch">
@@ -45,6 +45,7 @@ function logOut(){
         <div className="loginPage">
           <span>{user ? user.displayName :<Link to="/login">Login</Link> }</span>
           <hr />
+      
         </div>
       { user && <span onClick={logOut}> Logout</span> }
 
@@ -52,7 +53,9 @@ function logOut(){
           <SellButton></SellButton>
           <div className="sellMenuContent">
             <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+            <span onClick={()=>{
+              navigate("/create")
+            }}>SELL</span>
           </div>
         </div>
       </div>

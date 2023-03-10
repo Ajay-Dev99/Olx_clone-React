@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {auth} from '../../Firebase/config'
 import Logo from '../../olx-logo.png';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import './Login.css';
 
 function Login() {
@@ -26,11 +26,9 @@ function Login() {
           <input
             className="input"
             type="email"
-            value={email}
             onChange={(e)=>setEmail(e.target.value)}
             id="fname"
             name="email"
-            defaultValue="John"
           />
           <br />
           <label htmlFor="lname">Password</label>
@@ -48,7 +46,9 @@ function Login() {
           <br />
           <button>Login</button>
         </form>
-        <a>Signup</a>
+        <div>
+        {<Link to="/signup"><span  className='signup'>Signup</span> </Link>}
+        </div>
       </div>
     </div>
   );

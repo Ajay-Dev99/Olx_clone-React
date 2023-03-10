@@ -35,4 +35,9 @@
     justify-content: center;
     cursor: pointer;
   }
+
+  .login{
+    text-decoration: none;
+    color: black;
+  }
   

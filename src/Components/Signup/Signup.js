@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Logo from '../../olx-logo.png';
 import { FirebaseCotext } from '../../store/Context';
 import {auth,db} from '../../Firebase/config';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import './Signup.css';
 
 export default function Signup() {
@@ -89,7 +89,9 @@ const navigate = useNavigate();
           <br />
           <button>Signup</button>
         </form>
-        <a>Login</a>
+        <div >
+        {<Link to="/login"><span className='login'>Login</span></Link> }
+        </div>
       </div>
     </div>
   );
